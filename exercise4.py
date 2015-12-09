@@ -1,4 +1,5 @@
-word_count = {}  
+word_count = {}
+from operator import itemgetter, attrgetter 
 sentence = '''With a strong priority move, fantastic 120 base stats across the board, and a wide array of coverage moves, Arceus-Normal makes for an effective late-game sweeper that can easily set up and sweep once its checks and counters have been weakened. However, a huge part of Arceus-Normal's viability also comes from its ability to serve as a very strong revenge killer for its team, taking out weakened offensive threats with its Life Orb Extreme Speed. Arceus-Normal also pairs well with other offensive behemoths such as Primal Groudon, Xerneas, Darkrai, and Mega Salamence, easing its ability to fit onto offensive teams. Arceus-Normal fares well against a variety of offensive threats due to having a strong priority move in Extreme Speed and various coverage options. Arceus-Normal also appreciates the decline of Will-O-Wisp Support Arceus, non-Primal Groudon, and Landorus-T in the generation transition, competent checks in XY. However, a new check in Mega Salamence has been introduced, and old checks such as Mega Gengar are still troublesome.
  
 Swords Dance grants Arceus-Normal the ability to double its Attack, allowing it to OHKO various Pokemon such as Mewtwo and offensive Yveltal with little or no prior damage. Extreme Speed allows Arceus-Normal to bypass Speed tiers and Choice Scarf users, and it can and should be used to revenge kill offensive Pokemon such as Darkrai, Xerneas, Mega Mewtwo Y, and Blaziken once they have been even slightly weakened. Earthquake should be used to break through Primal Groudon as well as Steel- and Rock-types, namely Dialga, Arceus-Rock, and Mega Diancie, while Shadow Claw is used to break through Lugia and Ghost-types, namely Arceus-Ghost and Giratina-O. Stone Edge is an equally viable alternate option to Shadow Claw that hit Lugia, defensive Yveltal, Mega Salamence and Ho-Oh with one moveslot.
@@ -12,5 +13,7 @@ for line in words:
 		word_count [line] = 1
 	else:
 		word_count [line] += 1
-for key in sorted(word_count.keys()):
-	print key ,word_count[key]
+sortedWord =sorted(word_count.items(), key=lambda x: x[1],reverse =True)
+for value,count in sortedWord:	
+	print value , str(count)
+
