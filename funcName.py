@@ -6,11 +6,6 @@ def fN(name):
 def age(a):
     return a[1]
 
-def name(name):
-    return sorted(records.items(), key=lambda value:value[0])
-
-def ages(a):
-    return sorted(records.items(), key=lambda value:value[1])
 
 choice = raw_input("Function\t  Lambda\nA\tB\tC\tD\nChoice:")
 
@@ -23,12 +18,10 @@ elif choice == "B" or choice == "b":
     print spam
     
 elif choice == "C" or choice == "c":
-  for spam in name(records):
-    print spam
+  print sorted(records.items(), key=lambda value:value[0])
     
 elif choice == "D" or choice == "d":
-  for spam in ages(records):
-    print spam
+  print sorted(records.items(), key=lambda value:value[1])
 
 else:
     print "Invalid Input!"
