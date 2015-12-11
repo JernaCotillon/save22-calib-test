@@ -1,5 +1,8 @@
 def add(num1,num2):
-	return num1 + num2/10
+	return num1 + num2
+	if not isinstance(num1,int):
+		return None
+
 
 def sub(num1,num2):
 	return num1 - num2
@@ -20,20 +23,30 @@ def inputop():
 	return raw_input("Input operator: ")
 
 def operator(number1,op,number2):
-	if op == '+':
-		return add(number1,number2)
+	functions = {'+':add,
+	'-':sub,
+	'*':mul,
+	'/':div}
 
-	elif op == '-':
-		return sub(number1,number2)
+	func =functions.get(op,None)
+	if func:
+		return func(number1,number2)
+	return None
 
-	elif op == '*':
-		return mul(number1,number2)
+	# if op == '+':
+	# 	return add(number1,number2)
 
-	elif op == '/':
-		return div(number1,number2)
-	else:
-		print "Invalid Operand"
-	return none
+	# elif op == '-':
+	# 	return sub(number1,number2)
+
+	# elif op == '*':
+	# 	return mul(number1,number2)
+
+	# elif op == '/':
+	# 	return div(number1,number2)
+	# else:
+	# 	print "Invalid Operand"
+	return None
  
 def output(number1,op,number2,ans):
   return '{} {} {} = {}'.format(number1,op,number2,ans)

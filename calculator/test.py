@@ -21,10 +21,10 @@ class TestCalculator(unittest.TestCase):
 			calculator2.div(10,0)
 
 	def test_operator(self):
-		self.assertEqual(calculator2.add(13,11),24)
-		self.assertEqual(calculator2.sub(15,-10),25)
-		self.assertEqual(calculator2.mul(7,-3),-21)
-		self.assertEqual(calculator2.div(16,2),8)
+		self.assertEqual(calculator2.operator(13,'+',11),24)
+		self.assertEqual(calculator2.operator(15,'-',-10),25)
+		self.assertEqual(calculator2.operator(7,'*',-3),-21)
+		self.assertEqual(calculator2.operator(16,'/',2),8)
 		self.assertEqual(calculator2.operator(1,'AB',2))
 
 
