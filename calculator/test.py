@@ -95,8 +95,7 @@ class TestCalculator(unittest.TestCase):
          except ValueError:
                 print "Invalid Input"
          else:
-                self.fail('Did not see StringInputs')
-
+                self.fail('No String Input')
 
     def test_IntAndString(self):
         
@@ -108,7 +107,7 @@ class TestCalculator(unittest.TestCase):
          except ValueError:
                 print "Invalid Input"
          else:
-                self.fail('Did not see StringInputs')
+                self.fail('No String Input')
 
 if __name__ == '__main__':
     unittest.main()
